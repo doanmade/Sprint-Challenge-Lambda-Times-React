@@ -22,7 +22,7 @@ export const cardData = [
     img: "./assets/fido.jpg",
     author: "FIDO WALKSALOT"
   },
-  {
+  { 
     headline: "AI: What Are the Ethical Rammifications of the Future?",
     tab: "technology",
     img: "./assets/max.jpg",

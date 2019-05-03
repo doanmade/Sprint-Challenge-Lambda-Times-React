@@ -6,7 +6,7 @@ const Tab = props => {
       if it is not it should just be 'tab'*/
 
   handleClick = () => {
-    this.state({
+    this.setState({
       tab: []
     });
   };

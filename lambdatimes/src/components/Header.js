@@ -7,10 +7,10 @@ import styled from "styled-components";
 const HeaderStyle = styled.div`
   background-color: #fff;
   border-bottom: 1px solid lightgrey;
-  // width: 100%;
-  // height: 120px;
-  // margin-top: 44px;
-  // padding-bottom: 15px;
+  width: 100%;
+  height: 120px;
+  margin-top: 44px;
+  padding-bottom: 15px;
 `;
 
 const DataStyle = styled.div`
@@ -23,15 +23,21 @@ const TempStyle = styled.div`
   margin-right: 25px;
   flex: 1;
 `;
+const HeaderH1 = styled.div`
+  font-size: 60px;
+  font-family: Didot, serif;
+  font-weight: bold;
+  flex: 8;
+  text-align: center;
+  color: #000;
+`;
 
 const Header = () => {
   return (
     <HeaderStyle>
-      <div>
-        <DataStyle>SMARCH 32, 2018</DataStyle>
-        <h1>Lambda Times</h1>
-        <TempStyle>98°</TempStyle>
-      </div>
+      ><DataStyle>SMARCH 32, 2018</DataStyle>
+      <HeaderH1>Lambda Times</HeaderH1>
+      <TempStyle>98°</TempStyle>
     </HeaderStyle>
   );
 };
