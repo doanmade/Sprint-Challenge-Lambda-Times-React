@@ -11,6 +11,10 @@ const CardContainer = styled.div`
   width: 100%;
   margin-top: 16px;
   flex-wrap: wrap;
+
+  @media (min-width: 1200px) {
+    width: 1200px;
+  }
 `;
 
 const Cards = props => {

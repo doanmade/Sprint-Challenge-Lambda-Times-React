@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-
 // Refactor this component to use styled components and not classNames.
 // You can find the corresponding CSS in the CSS/index.css file
+
 const TopBarStyle = styled.div`
   width: 100%;
   display: flex;
@@ -12,21 +12,12 @@ const TopBarStyle = styled.div`
   position: fixed;
   height: 44px;
   background-color: #333;
-`;
-
-const ContainerStyles = styled(TopBarStyle)`
-  justify-content: none;
-  color: #fff;
-  letter-spacing: 1px;
-  padding: 0 10px;
-  & > span {
-    cursor: pointer;
-    margin-right: 25%;
-    font-weight: bold;
+  @media (min-width: 1280px) {
+    width: 1280px;
   }
 `;
 
-const ContainerLeft = styled.div`
+const ContainerStyles = styled.div`
   width: 100%;
   display: flex;
   justify-content: none;
@@ -35,6 +26,24 @@ const ContainerLeft = styled.div`
   color: #fff;
   letter-spacing: 1px;
   padding: 0 10px;
+
+  @media (min-width: 1280px) {
+    width: 1280px;
+  }
+`;
+
+const ContainerLeft = styled.div`
+  display: flex;
+  justify-content: none;
+  align-items: center;
+  flex-direction: row;
+  flex: 1;
+  font-size: 11px;
+  & > span {
+    cursor: pointer;
+    margin-right: 25%;
+    font-weight: bold;
+  }
 `;
 
 const ContainerCenter = styled.div`
@@ -47,6 +56,12 @@ const ContainerCenter = styled.div`
   & > span {
     cursor: pointer;
     margin-right: 5%;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
   }
 `;
 

@@ -11,19 +11,22 @@ const HeaderStyle = styled.div`
   height: 120px;
   margin-top: 44px;
   padding-bottom: 15px;
+  @media (min-width: 1280px) {
+    width: 1280px;
+  }
 `;
 
-const DataStyle = styled.div`
+const DateStyle = styled.span`
   margin-left: 25px;
   flex: 1;
 `;
 
-const TempStyle = styled.div`
+const TempStyle = styled.span`
   text-align: right;
   margin-right: 25px;
   flex: 1;
 `;
-const HeaderH1 = styled.div`
+const HeaderH1 = styled.h1`
   font-size: 60px;
   font-family: Didot, serif;
   font-weight: bold;
@@ -35,7 +38,7 @@ const HeaderH1 = styled.div`
 const Header = () => {
   return (
     <HeaderStyle>
-      <DataStyle>SMARCH 32, 2018</DataStyle>
+      <DateStyle>SMARCH 32, 2018</DateStyle>
       <HeaderH1>Lambda Times</HeaderH1>
       <TempStyle>98°</TempStyle>
     </HeaderStyle>
