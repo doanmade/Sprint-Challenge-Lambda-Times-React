@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 // Refactor this component to use styled components and not classNames.
 // You can find the corresponding CSS in the CSS/index.css file
-const TopBar = styled.div`
+const TopBarStyle = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -14,11 +14,16 @@ const TopBar = styled.div`
   background-color: #333;
 `;
 
-const Container = styled(TopBar)`
+const ContainerStyles = styled(TopBarStyle)`
   justify-content: none;
   color: #fff;
   letter-spacing: 1px;
   padding: 0 10px;
+  & > span {
+    cursor: pointer;
+    margin-right: 25%;
+    font-weight: bold;
+  }
 `;
 
 const ContainerLeft = styled.div`
@@ -31,11 +36,6 @@ const ContainerLeft = styled.div`
   letter-spacing: 1px;
   padding: 0 10px;
 `;
-const LeftSpan = styled(Container)`
-  cursor: pointer;
-  margin-right: 25%;
-  font-weight: bold;
-`;
 
 const ContainerCenter = styled.div`
   display: flex;
@@ -44,11 +44,10 @@ const ContainerCenter = styled.div`
   flex-direction: row;
   flex: 3;
   font-size: 9px;
-`;
-
-const CenterSpan = styled(ContainerCenter)`
-  cursor: pointer;
-  margin-right: 5%;
+  & > span {
+    cursor: pointer;
+    margin-right: 5%;
+  }
 `;
 
 const ContainerRight = styled.div`
@@ -59,31 +58,31 @@ const ContainerRight = styled.div`
   flex: 1;
   font-size: 11px;
   font-weight: bold;
-`;
-const RightSpan = styled(ContainerRight)`
-  cursor: pointer;
+  & > span {
+    cursor: pointer;
+  }
 `;
 
 const TopBar = () => {
   return (
-    <TopBar>
-      <Container>
+    <TopBarStyle>
+      <ContainerStyles>
         <ContainerLeft>
-          <LeftSpan>TOPICS</LeftSpan>
-          <LeftSpan>SEARCH</LeftSpan>
+          <span>TOPICS</span>
+          <span>SEARCH</span>
         </ContainerLeft>
         <ContainerCenter>
-          <CenterSpan>GENERAL</CenterSpan>
-          <CenterSpan>BROWNBAG</CenterSpan>
-          <CenterSpan>RANDOM</CenterSpan>
-          <CenterSpan>MUSIC</CenterSpan>
-          <CenterSpan>ANNOUNCEMENTS</CenterSpan>
+          <span>GENERAL</span>
+          <span>BROWNBAG</span>
+          <span>RANDOM</span>
+          <span>MUSIC</span>
+          <span>ANNOUNCEMENTS</span>
         </ContainerCenter>
         <ContainerRight>
-          <RightSpan>LOG IN</RightSpan>
+          <span>LOG IN</span>
         </ContainerRight>
-      </Container>
-    </TopBar>
+      </ContainerStyles>
+    </TopBarStyle>
   );
 };
 

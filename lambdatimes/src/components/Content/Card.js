@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 
@@ -36,7 +37,7 @@ const ImageStyle = styled.img`
   width: 40px;
 `;
 
-const ImageStyle = styled(AuthorStyle)`
+const AuthorSpan = styled(AuthorStyle)`
   padding-left: 10px;
   font-size: 12px;
   letter-spacing: 1px;
@@ -45,18 +46,21 @@ const ImageStyle = styled(AuthorStyle)`
 
 const Card = props => {
   return (
-    <div className="card">
-      <div className="headline">{/* headline goes here */}</div>
-      <div className="author">
-        <div className="img-container">
-          <img src={"" /* image source goes here */} />
-        </div>
-        <span>By {/* author goes here */}</span>
-      </div>
-    </div>
+    <CardStyle>
+      <Headline>{props.card.headline}</Headline>
+      <AuthorStyle>
+        <ImgContainer>
+          <ImageStyle alt={props.card.headline} src={props.card.img} />
+        </ImgContainer>
+        <AuthorSpan>By {props.card.author}</AuthorSpan>
+      </AuthorStyle>
+    </CardStyle>
   );
 };
 
+Card.propTypes = {
+  card: PropTypes.object
+};
 // Make sure to include PropTypes.
 
 export default Card;

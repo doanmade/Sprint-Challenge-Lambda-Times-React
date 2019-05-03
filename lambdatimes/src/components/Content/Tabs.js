@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 import Tab from "./Tab";
@@ -30,12 +31,26 @@ const Tabs = props => {
     <TabStyle>
       <TopicsStyle>
         <TitleStyle>TRENDING TOPICS:</TitleStyle>
-        <Tab />
+        {props.tabs.map((tab, i) => (
+          <Tab
+            tab={tab}
+            key={i}
+            selectTabHandler={props.selectTabHandler}
+            selectedTab={props.selectedTab}
+          />
+        ))}
+
         {/* map over the tabs provided on your props, create a new Tab component for each one.
             give the tab component a `selectTabHandler`, the `selectedTab`, and the `tab` itself as props*/}
       </TopicsStyle>
     </TabStyle>
   );
+};
+
+Tabs.propTypes = {
+  tabs: PropTypes.arrayOf(PropTypes.string),
+  selectedTab: PropTypes.string,
+  selectTabHandler: PropTypes.func
 };
 
 // Make sure to use PropTypes to validate your types!
